@@ -1,7 +1,6 @@
 import time
 from adafruit_circuitplayground import cp
 import adafruit_fancyled.adafruit_fancyled as fancy
-#import denormalize from adafruit_fancyled
 
 hue = 0.006
 
