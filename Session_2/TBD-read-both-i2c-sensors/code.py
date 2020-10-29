@@ -1,8 +1,12 @@
 import time
 import board
-import digitalio
 import busio
+import digitalio
+import adafruit_vl53l0x
 import adafruit_lis3dh
+
+i2c_bus_offboard = busio.I2C( board.SCL, board.SDA )
+rangefinder = adafruit_vl53l0x.VL53L0X( i2c_bus_offboard )
 
 #initialize the accelerometer
 i2c_bus_accel = busio.I2C(board.ACCELEROMETER_SCL, board.ACCELEROMETER_SDA)
@@ -12,7 +16,11 @@ accelerometer = adafruit_lis3dh.LIS3DH_I2C(i2c_bus_accel, address=0x19, int1=int
 accelerometer.range = adafruit_lis3dh.RANGE_2_G
 
 while True:
-    # Read accelerometer values (in m / s ^ 2).  Returns a 3-tuple of x, y, z axis values.  Divide them by 9.806 to convert to Gs.
+    distance_mm = rangefinder.range
+    if distance_mm > 1000:
+        distance_mm = 1000
+    print( distance_mm )
     a_x, a_y, a_z = [ value for value in accelerometer.acceleration ]
     print( a_z )
-    time.sleep( 0.1 )
+
+    time.sleep(0.1)
