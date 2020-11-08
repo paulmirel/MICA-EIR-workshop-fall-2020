@@ -14,8 +14,9 @@ while True:
     if warning_interval(): #remember the () to check the time. an object without () is always True, because it exists.
         cp.play_tone( 880, 0.5 ) #play a tone
         cp.pixels.fill( warning_color )
-        time.sleep( 0.1 )
+        time.sleep( 0.1 ) # stop & hold
     else:
         cp.pixels.fill( OFF )
+
     #slow the loop only in one place
     time.sleep( 0.01 )

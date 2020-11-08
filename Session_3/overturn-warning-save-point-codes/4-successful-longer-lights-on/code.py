@@ -17,5 +17,6 @@ while True:
         time.sleep( 0.05 )
     else:
         cp.pixels.fill( OFF )
+
     #slow the loop only in one place
     time.sleep( 0.01 )
