@@ -6,8 +6,8 @@ from every import Every
 
 #set up
 blink_interval = Every( 1.0 ) #create the blink interval timer
-on_duration = 2.0
-off_duration = 5.0
+on_duration = 0.5
+off_duration = 2.0
 
 color = ( 200, 0, 80 )
 OFF = ( 0, 0, 0 )
