@@ -1,5 +1,5 @@
 from adafruit_circuitplayground import cp
-from unrvl.every import Every
+from every import Every
 
 cp.pixels.brightness = 0.6 # 0.0 to 1.0
 light_color = ( 255, 0, 0 ) #( red, green, blue ) each 0-255

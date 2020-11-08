@@ -1,7 +1,7 @@
 # tap, timed leds
 
 from adafruit_circuitplayground import cp
-from unrvl.every import Every
+from every import Every
 
 cp.pixels.brightness = 0.6 # 0.0 to 1.0
 light_color = ( 0, 10, 30 ) #( red, green, blue ) each 0-255
