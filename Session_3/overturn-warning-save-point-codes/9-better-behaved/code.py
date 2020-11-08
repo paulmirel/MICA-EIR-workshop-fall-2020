@@ -32,3 +32,6 @@ while True:
     # when to turn off
     if flash_duration():
         cp.pixels.fill( OFF )
+    #slow the loop only in one place
+    time.sleep( 0.01 )
+
